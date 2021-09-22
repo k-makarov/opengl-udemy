@@ -1,19 +1,27 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.11)
 
-project(OpenGLUdemy VERSION 1.0)
+project(
+  OpenGLUdemy
+  VERSION 0.1
+  DESCRIPTION "Udemy course project for moder open gl"
+  LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
+if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
 
-configure_file(src/config.h.in config.h)
+  # Optionally set things like CMAKE_CXX_STANDARD, CMAKE_POSITION_INDEPENDENT_CODE here
+  set(CMAKE_CXX_STANDARD 11)
+  set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+  # Let's ensure -std=c++xx instead of -std=g++xx
+  set(CMAKE_CXX_EXTENSIONS OFF)
+
+  # Let's nicely support folders in IDEs
+  set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+
+endif()
 
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()
 
-add_executable(OpenGLUdemy src/main.cpp)
-
-target_link_libraries(OpenGLUdemy ${CONAN_LIBS})
-
-target_include_directories(OpenGLUdemy PUBLIC
-                           "${PROJECT_BINARY_DIR}"
-                           )
+add_subdirectory(src)
+add_subdirectory(apps)

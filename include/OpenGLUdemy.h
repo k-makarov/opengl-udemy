@@ -1,0 +1,3 @@
+namespace OpenGLUdemy {    
+    int run();
+}

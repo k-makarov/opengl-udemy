@@ -6,5 +6,7 @@ mkdir build
 cd build
 
 conan install ..
+
 cmake .. -G Xcode
-cmake --build .
+cmake --build ..
+
