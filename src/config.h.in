@@ -1,0 +1,4 @@
+// the configured options and settings for Playground
+#define OpenGLUdemy_VERSION_MAJOR @OpenGLUdemy_VERSION_MAJOR@
+#define OpenGLUdemy_VERSION_MINOR @OpenGLUdemy_VERSION_MINOR@
+
