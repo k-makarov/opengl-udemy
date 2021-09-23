@@ -1,4 +1,4 @@
-add_executable(app app.cpp)
-target_compile_features(app PRIVATE cxx_std_17)
+add_executable(OpenGLUdemy OpenGLUdemy.cpp)
+target_compile_features(OpenGLUdemy PRIVATE cxx_std_17)
 
-target_link_libraries(app PRIVATE OpenGLUdemy)
+target_link_libraries(OpenGLUdemy PRIVATE CoreOpenGLUdemy)
